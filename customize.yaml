@@ -15,7 +15,7 @@ sensor.mfilivingroomconsole_port8:
   friendly_name: Netgear Arlo
 
 sensor.mfigarage_port8:
-  friendly_name: Fridge Freeze
+  friendly_name: Fridge Freezer
 
 sensor.captured_today_entryway:
   friendly_name: Entryway
