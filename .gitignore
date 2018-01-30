@@ -2,6 +2,7 @@
 secrets.yaml
 .wink.conf
 nest.conf
+phue-*.conf
 
 
 
