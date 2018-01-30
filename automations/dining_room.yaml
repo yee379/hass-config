@@ -1,22 +1,14 @@
 
 
-- alias: Movement in dining room
+- alias: Movement in dining room detected
   trigger:
     - platform: state
       entity_id: binary_sensor.linear_wapirz1_motion_1
       to: 'on'
-  #condition:
-  #  condition: 'and'
-  #  conditions:
-  #    - condition: state
-  #      entity_id: light.dining_room
-  #      state: 'on'
-  #    - condition: template
-  #      value_template: '{{ ( states.input_number.dining_room | default(0) | int ) < ( states.light.dining_room.attributes.brightness | default(0) ) }}'
   action:
     - service: notify.slack
       data_template:
-        message: 'movement in dining room, setting level to {{ states.light.dining_room.attributes.brightness | int }}'
+        message: 'movement in dining room, lights at {{ states.light.dining_room.attributes.brightness | int }}'
     - service: timer.cancel
       entity_id: timer.motion_dining_room_dim
     - service: timer.cancel
@@ -26,7 +18,7 @@
       data_template:
         value: '{{ states.light.dining_room.attributes.brightness | int }}'
 
-- alias: No movement in dining room
+- alias: No movement in dining room detected
   trigger:
     - platform: state
       entity_id: binary_sensor.linear_wapirz1_motion_1
@@ -51,9 +43,9 @@
   condition:
     condition: and
     conditions:
-      #- condition: state
-      #  entity_id: input_boolean.is_dark
-      #  state: 'on'
+      - condition: state
+        entity_id: binary_sensor.linear_wapirz1_motion_1
+        state: 'off'
       - condition: state
         entity_id: light.dining_room
         state: 'on'
@@ -68,7 +60,7 @@
     - service: light.turn_on
       entity_id: light.dining_room
       data_template:
-        #transition: 5
+        transition: 5
         brightness: '{{ ( states.light.dining_room.attributes.brightness / 2 ) | int }}'
 
 - alias: Turn dining room lights off if no movement
@@ -92,4 +84,5 @@
         message: "Turning off dining room light (current state {{ states.light.dining_room }})"
     - service: light.turn_off
       entity_id: light.dining_room
-
+      data_template:
+        transition: 5

@@ -58,6 +58,9 @@
     condition: and
     conditions:
       - condition: state
+        entity_id: binary_sensor.linear_wapirz1_motion_2
+        state: 'off'
+      - condition: state
         entity_id: light.kitchen
         state: 'on'
   action:
@@ -67,7 +70,7 @@
     - service: light.turn_on
       entity_id: light.kitchen
       data_template:
-        transition: 3
+        transition: 5
         brightness: '{{ ( states.light.kitchen.attributes.brightness / 2 ) | int }}' 
   
 - alias: Turn kitchen lights off if no movement
@@ -80,6 +83,9 @@
     condition: and
     conditions:
       - condition: state
+        entity_id: binary_sensor.linear_wapirz1_motion_2
+        state: 'off'
+      - condition: state
         entity_id: light.kitchen
         state: 'on'
   action:
@@ -88,3 +94,5 @@
         message: "Turning off kitchen light"
     - service: light.turn_off
       entity_id: light.kitchen
+      data_template:
+        transition: 5
