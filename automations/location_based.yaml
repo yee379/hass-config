@@ -1,0 +1,127 @@
+- alias: Notify when new network device has been discovered
+  initial_state: true
+  trigger:
+    - platform: event
+      event_type: device_tracker_new_device
+  action:
+    - service: notify.html5
+      data_template:
+        message: "A new device has been detected: {{ trigger.event }}"
+    - service: notify.slack
+      data_template:
+        message: "A new device has been detected: {{ trigger.event }}"
+
+- alias: Set No-one at Home
+  trigger:
+    - platform: state
+      entity_id:
+        - device_tracker.yeespixel
+        - device_tracker.psiphone
+      from: 'home'
+      to: 'not_home'
+#    - platform: template
+#      value_template: "{{ is_state_attr('climate.home', 'away_mode', 'on' }}"
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: 'device_tracker.yeespixel'
+        state: 'not_home'
+      - condition: state
+        entity_id: 'device_tracker.psiphone'
+        state: 'not_home'
+  action:
+    - service: input_boolean.turn_off
+      entity_id:  input_boolean.at_home
+    - service: notify.slack
+      data_template:
+        message: "Bye bye"
+    
+- alias: Set Thermostat to Away mode when no-one is home
+  trigger:
+    - platform: state
+      entity_id: 'input_boolean.at_home'
+      from: 'on'
+      to: 'off'
+  action:
+    - service: notify.slack
+      data_template:
+        message: "Setting thermostat to away"
+    - service: climate.set_away_mode
+      data:
+        entity_id: 'climate.home'
+        away_mode: true
+    - service: notify.slack
+      data_template:
+        message: "Done setting thermostat to away"
+
+- alias: Turn off all lights when no-one at home
+  trigger:
+    - platform: state
+      entity_id: input_boolean.at_hoem
+  action:
+    - service: notify.slack
+      data_template:
+        message: "Turning off all lights"
+    - service: lights.turn_off
+      entity_id: group.all_lights
+    - service: notify.slack
+      data_template:
+        message: "Turned off all lights"
+
+
+- alias: Set Coming Home
+  trigger:
+    - platform: state
+      entity_id:
+        - device_tracker.yeespixel
+        - device_tracker.psiphone
+      from: 'not_home'
+      to: 'home'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: 'device_tracker.yeespixel'
+        state: 'home'
+      - condition: state
+        entity_id: 'device_tracker.psiphone'
+        state: 'home'
+  action:
+    - service: input_boolean.turn_on
+      entity_id:
+        - input_boolean.at_home
+    - service: notify.slack
+      data_template:
+        message: "Welcome back {{ trigger.entity_id }}"
+
+- alias: Set Thermostat to On when home
+  trigger:
+    - platform: state
+      entity_id: 'input_boolean.at_home'
+      from: 'off'
+      to: 'on'
+  action:
+    - service: notify.slack
+      data_template:
+        message: "Set thermostat to home"
+    - service: climate.set_away_mode
+      data:
+        entity_id: 'climate.home'
+        away_mode: false
+    - service: notify.slack
+      data_template:
+        message: "Done setting termostat to home"
+
+- alias: Turn lights on when arriving home
+  trigger:
+    - platform: state
+      entity_id: 'input_boolean.at_home'
+      from: 'off'
+      to: 'on'
+  action:
+    - service: scene.turn_on
+      entity_id:
+        - scene.indoor_arrival
+
+

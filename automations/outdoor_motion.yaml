@@ -1,0 +1,135 @@
+
+- alias: Motion detected outdoors
+  trigger:
+    - platform: state
+      entity_id:
+        - binary_sensor.vision_zp3102_pir_motion_1
+        - binary_sensor.vision_zp3102_pir_motion_2
+        - binary_sensor.vision_zp3102_pir_motion_3
+      to: 'on'
+    - platform: numeric_state
+      entity_id:
+        - sensor.captured_today_entryway
+        - sensor.captured_today_front
+      above: 0
+  action:
+    - service: notify.slack
+      data_template:
+        message: "Detected motion outside {{ trigger.entity_id }}"
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.motion_outside
+    - service: timer.cancel
+      entity_id: timer.motion_outdoor
+
+- alias: No motion outside
+  trigger:
+    - platform: state
+      entity_id:
+        - binary_sensor.vision_zp3102_pir_motion_1
+        - binary_sensor.vision_zp3102_pir_motion_2
+        - binary_sensor.vision_zp3102_pir_motion_3
+      to: 'off'
+    - platform: time
+      minutes: '/1'
+      seconds: '00'
+  condition:
+    condition: 'and'
+    conditions:
+      - condition: state
+        entity_id: timer.motion_outdoor
+        state: 'idle'
+      - condition: state
+        entity_id: input_boolean.motion_outside
+        state: 'on'
+      - condition: state
+        entity_id: binary_sensor.vision_zp3102_pir_motion_1
+        state: 'off'
+      - condition: state
+        entity_id: binary_sensor.vision_zp3102_pir_motion_2
+        state: 'off'
+      - condition: state
+        entity_id: binary_sensor.vision_zp3102_pir_motion_3
+        state: 'off'
+      - condition: template
+        value_template: >-
+          {{ as_timestamp(now()) - as_timestamp( strptime(states('sensor.last_front'), "%m-%d-%Y %H:%M:%S") ) | int > 60 }}
+      - condition: numeric_state
+        entity_id: sensor.captured_today_front
+        above: 0
+      - condition: template
+        value_template: >-
+          {{ as_timestamp(now()) - as_timestamp( strptime(states('sensor.last_entryway'), "%m-%d-%Y %H:%M:%S") ) | int > 60 }}
+      - condition: numeric_state
+        entity_id: sensor.captured_today_entryway
+        above: 0
+  action:
+    - service: notify.slack
+      data_template:
+        message: "No outside motion on has been detected, starting timer"
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.motion_outside
+    - service: timer.start
+      entity_id: timer.motion_outdoor
+
+- alias: Turn outdoor lights on if movement at night
+  trigger:
+    - platform: state
+      entity_id: input_boolean.motion_outside
+      to: 'on'
+  condition:
+    condition: 'or'
+    conditions:
+      - condition: state
+        entity_id: input_boolean.is_dark
+        state: 'on'
+  action:
+    - service: notify.slack
+      data_template:
+        message: "Motion detected outside at night, turning on outdoor light"
+    - service: light.turn_on
+      entity_id: light.outdoor
+      #data:
+      #  transition: 1
+      #  brightness_pct: 100
+
+- alias: Turn outdoor lights off if no movement
+  trigger:
+    - platform: event
+      event_type: timer.finished
+      event_data:
+        entity_id: timer.motion_outdoor
+  condition:
+    condition: 'and'
+    conditions:
+      - condition: state
+        entity_id: lights.outdoor
+        state: 'on'
+  action:
+    - service: notify.slack
+      data_template:
+        message: "No movement outside for a while, turning off outdoor light"
+    - service: light.turn_off
+      entity_id: light.outdoor
+
+- alias: No motion outside for a while
+  trigger:
+    - platform: event
+      event_type: timer.finished
+      event_data:
+        entity_id: timer.motion_outdoor
+  action:
+    - service: notify.slack
+      data_template:
+        message: "No movement outside for a while"
+
+
+- alias: Motion in garage
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.vision_zp3102_pir_motion_4
+      to: 'on'
+  action:
+    - service: notify.slack
+      data_template:
+        message: "Motion in garage has been detected"
+

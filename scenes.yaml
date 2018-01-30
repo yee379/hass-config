@@ -1,0 +1,40 @@
+- name: kitchen_dim
+  entities:
+    light.kitchen:
+      state: on
+      transition: 3
+      brightness_pct: 50
+
+
+- name: hallway_nightlight
+  entities:
+    light.hallway:
+      state: on
+      transition: 3
+      brightness_pct: 1
+
+- name: outdoor_security_lights_on
+  entities:
+    light.outdoor:
+      state: on
+      transition: 1
+      brightness_pct: 100
+
+- name: outdoor_security_lights_off
+  entities:
+    light.outdoor:
+      state: off
+      transition: 1
+
+
+- name: indoor_arrival
+  entities:
+    light.hallway:
+      state: 'on'
+      #transition: 1
+      brightness_pct: 1
+    light.dining_room:
+      state: 'on'
+      transition: 3
+      brightness_pct: 80
+

@@ -1,0 +1,173 @@
+- platform: mqtt
+  state_topic: home/mfi-3port/port1
+  name: 'mfi-3port_port1'
+  unit_of_measurement: 'Watts'
+  value_template: '{{ value_json.power }}'
+  json_attributes:
+    - voltage
+    - output
+    - current
+- platform: mqtt
+  state_topic: home/mfi-3port/port2
+  name: 'mfi-3port_port2'
+  unit_of_measurement: 'Watts'
+  value_template: '{{ value_json.power }}'
+  json_attributes:
+    - voltage
+    - output
+    - current
+- platform: mqtt
+  state_topic: home/mfi-3port/port3
+  name: 'mfi-3port_port3'
+  unit_of_measurement: 'Watts'
+  value_template: '{{ value_json.power }}'
+  json_attributes:
+    - voltage
+    - output
+    - current
+
+- platform: mqtt
+  state_topic: home/mfi-livingroom-console/port1
+  name: 'mfi-livingroom-console_port1'
+  unit_of_measurement: 'Watts'
+  value_template: '{{ value_json.power }}'
+  json_attributes:
+    - voltage
+    - output
+    - current
+- platform: mqtt
+  state_topic: home/mfi-livingroom-console/port2
+  name: 'mfi-livingroom-console_port2'
+  unit_of_measurement: 'Watts'
+  value_template: '{{ value_json.power }}'
+  json_attributes:
+    - voltage
+    - output
+    - current
+- platform: mqtt
+  state_topic: home/mfi-livingroom-console/port3
+  name: 'mfi-livingroom-console_port3'
+  unit_of_measurement: 'Watts'
+  value_template: '{{ value_json.power }}'
+  json_attributes:
+    - voltage
+    - output
+    - current
+- platform: mqtt
+  state_topic: home/mfi-livingroom-console/port4
+  name: 'mfi-livingroom-console_port4'
+  unit_of_measurement: 'Watts'
+  value_template: '{{ value_json.power }}'
+  json_attributes:
+    - voltage
+    - output
+    - current
+- platform: mqtt
+  state_topic: home/mfi-livingroom-console/port5
+  name: 'mfi-livingroom-console_port5'
+  unit_of_measurement: 'Watts'
+  value_template: '{{ value_json.power }}'
+  json_attributes:
+    - voltage
+    - output
+    - current
+- platform: mqtt
+  state_topic: home/mfi-livingroom-console/port6
+  name: 'mfi-livingroom-console_port6'
+  unit_of_measurement: 'Watts'
+  value_template: '{{ value_json.power }}'
+  json_attributes:
+    - voltage
+    - output
+    - current
+- platform: mqtt
+  state_topic: home/mfi-livingroom-console/port7
+  name: 'mfi-livingroom-console_port7'
+  unit_of_measurement: 'Watts'
+  value_template: '{{ value_json.power }}'
+  json_attributes:
+    - voltage
+    - output
+    - current
+- platform: mqtt
+  state_topic: home/mfi-livingroom-console/port8
+  name: 'mfi-livingroom-console_port8'
+  unit_of_measurement: 'Watts'
+  value_template: '{{ value_json.power }}'
+  json_attributes:
+    - voltage
+    - output
+    - current
+
+- platform: mqtt
+  state_topic: home/mfi-garage/port1
+  name: 'mfi-garage_port1'
+  unit_of_measurement: 'Watts'
+  value_template: '{{ value_json.power }}'
+  json_attributes:
+    - voltage
+    - output
+    - current
+- platform: mqtt
+  state_topic: home/mfi-garage/port2
+  name: 'mfi-garage_port2'
+  unit_of_measurement: 'Watts'
+  value_template: '{{ value_json.power }}'
+  json_attributes:
+    - voltage
+    - output
+    - current
+- platform: mqtt
+  state_topic: home/mfi-garage/port3
+  name: 'mfi-garage_port3'
+  unit_of_measurement: 'Watts'
+  value_template: '{{ value_json.power }}'
+  json_attributes:
+    - voltage
+    - output
+    - current
+- platform: mqtt
+  state_topic: home/mfi-garage/port4
+  name: 'mfi-garage_port4'
+  unit_of_measurement: 'Watts'
+  value_template: '{{ value_json.power }}'
+  json_attributes:
+    - voltage
+    - output
+    - current
+- platform: mqtt
+  state_topic: home/mfi-garage/port5
+  name: 'mfi-garage_port5'
+  unit_of_measurement: 'Watts'
+  value_template: '{{ value_json.power }}'
+  json_attributes:
+    - voltage
+    - output
+    - current
+- platform: mqtt
+  state_topic: home/mfi-garage/port6
+  name: 'mfi-garage_port6'
+  unit_of_measurement: 'Watts'
+  value_template: '{{ value_json.power }}'
+  json_attributes:
+    - voltage
+    - output
+    - current
+- platform: mqtt
+  state_topic: home/mfi-garage/port7
+  name: 'mfi-garage_port7'
+  unit_of_measurement: 'Watts'
+  value_template: '{{ value_json.power }}'
+  json_attributes:
+    - voltage
+    - output
+    - current
+- platform: mqtt
+  state_topic: home/mfi-garage/port8
+  name: 'mfi-garage_port8'
+  unit_of_measurement: 'Watts'
+  value_template: '{{ value_json.power }}'
+  json_attributes:
+    - voltage
+    - output
+    - current

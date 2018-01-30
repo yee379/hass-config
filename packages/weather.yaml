@@ -1,0 +1,5 @@
+
+# Weather prediction
+sensor:
+  - platform: yr
+  - platform: moon

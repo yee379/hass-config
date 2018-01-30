@@ -1,0 +1,174 @@
+
+arlo:
+  hide_if_away: false
+  icon: mdi:webcam
+  mac: 9C:3D:CF:7D:0A:8D
+  name: Arlo
+  picture:
+  track: true
+  vendor: NETGEAR
+
+nestthermostat:
+  hide_if_away: false
+  icon: mdi:leaf
+  mac: 18:B4:30:CB:39:3D
+  name: Nest Thermostat
+  picture:
+  track: true
+  vendor: Nest Labs Inc.
+
+mfilivingroomconsole:
+  hide_if_away: false
+  icon: mdi:plus-network
+  mac: F0:9F:C2:4D:4E:BD
+  name: mfi-livingroom-console
+  picture:
+  track: true
+  vendor: Ubiquiti Networks Inc.
+
+00015c657246:
+  hide_if_away: false
+  icon:
+  mac: 00:01:5C:65:72:46
+  name: 00015c657246
+  picture:
+  track: true
+  vendor: CADANT INC.
+
+yeespixel:
+  hide_if_away: false
+  icon: mdi:cellphone-android
+  mac: AC:37:43:A0:DF:0B
+  name: Yee's Pixel (Wifi)
+  picture:
+  track: true
+  vendor: unknown
+
+echo:
+  hide_if_away: false
+  icon:
+  mac: F0:27:2D:7D:1C:4D
+  name: Echo
+  picture:
+  track: true
+  vendor: Amazon Technologies Inc.
+
+psipad:
+  hide_if_away: false
+  icon: mdi:tablet-ipad
+  mac: 78:7B:8A:5F:88:A4
+  name: P's iPad
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+winkhub:
+  hide_if_away: false
+  icon:
+  mac: 34:23:BA:FD:99:DE
+  name: WinkHub
+  picture:
+  track: true
+  vendor: SAMSUNG ELECTRO-MECHANICS(THAILAND)
+
+rpi3b:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:CB:9A:A3
+  name: Raspberry Pi 3B
+  picture:
+  track: true
+  vendor: Raspberry Pi Foundation
+
+yeesipad:
+  hide_if_away: false
+  icon: mdi:tablet-ipad
+  mac: 78:7B:8A:55:92:65
+  name: Yee's iPad (Wifi)
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+yeesmacbookpro:
+  hide_if_away: false
+  icon: mdi:laptop-mac
+  mac: 98:01:A7:97:44:27
+  name: Yee's MacBookPro
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+philipshue:
+  hide_if_away: false
+  icon:
+  mac: 00:17:88:19:43:2B
+  name: Philips-hue
+  picture:
+  track: true
+  vendor: Philips Lighting BV
+
+
+psiphone:
+  hide_if_away: false
+  icon: mdi:cellphone-iphone
+  mac: 70:14:A6:29:76:76
+  name: P's iPhone (Wifi)
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+mfi-garage:
+  hide_if_away: false
+  icon: mdi:plus-network
+  mac: F0:9F:C2:4D:51:91
+  name: mfi-garage
+  picture:
+  track: true
+  vendor: unknown
+
+mfi-3port:
+  hide_if_away: false
+  icon: mdi:plus-network
+  mac: 24:A4:3C:D7:4D:6B
+  name: mfi-3port
+  picture:
+  track: true
+  vendor: Ubiquiti Networks Inc.
+
+yeespixel_bt:
+  hide_if_away: false
+  icon: mdi:cellphone-android
+  mac: BT_AC:37:43:8E:EB:74
+  name: Yee's Pixel (BT)
+  picture:
+  track: true
+  vendor: HTC Corporation
+
+
+yeesipad_ha:
+  hide_if_away: false
+  icon: mdi:tablet-ipad 
+  mac:
+  name: Yee's iPad (HA)
+  picture:
+  track: true
+  vendor:
+
+
+rpi2:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:34:E2:0D
+  name: rpi2
+  picture:
+  track: true
+  vendor: unknown
+
+74ea3a90884d:
+  hide_if_away: false
+  icon:
+  mac: 74:EA:3A:90:88:4D
+  name: 74ea3a90884d
+  picture:
+  track: true
+  vendor: TP-LINK TECHNOLOGIES CO.,LTD.

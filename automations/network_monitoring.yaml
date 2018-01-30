@@ -1,0 +1,29 @@
+- alias: Notify when iot hub drops off network
+  trigger:
+    - platform: state
+      entity_id:
+        - device_tracker.arlo
+        - device_tracker.echo
+        - device_tracker.nestthermostat
+        - device_tracker.philipshue
+        - device_tracker.winkhub
+      to: 'not_home'
+  action:
+    - service: notify.slack
+      data_template:
+        message: 'networked device {{ trigger.entity_id }} dropped of network'
+
+#- alias: Notify network device joins network
+#  trigger:
+#    - platform: state
+#      entity_id:
+#        - device_tracker.arlo
+#        - device_tracker.echo
+#        - device_tracker.nestthermostat
+#        - device_tracker.philipshue
+#        - device_tracker.winkhub
+#      to: 'home'
+#  action:
+#    - service: notify.slack
+#      data_template:
+#        message: 'networked device {{ trigger.entity_id }} on network'

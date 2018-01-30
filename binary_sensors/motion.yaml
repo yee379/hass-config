@@ -1,0 +1,38 @@
+- platform: template
+  sensors:
+
+    vision_zp3102_pir_motion_1:
+      device_class: motion
+      value_template: "{{ states('sensor.vision_zp3102_pir_motion_sensor_alarm_level')|float > 0 }}"
+      # temperature: "{{ states('sensor.vision_zp3102_pir_motion_sensor_temperature')|float }}"
+      # unit_of_measurement: '°C'
+      # battery_level: "{{ states('zwave.vision_zp3102_pir_motion_sensor.attributes.battery_level')|float }}"
+    vision_zp3102_pir_motion_2:
+      device_class: motion
+      value_template: "{{ states('sensor.vision_zp3102_pir_motion_sensor_alarm_level_2')|float > 0 }}"
+    vision_zp3102_pir_motion_3:
+      device_class: motion
+      value_template: "{{ states('sensor.vision_zp3102_pir_motion_sensor_alarm_level_3')|float > 0 }}"
+    vision_zp3102_pir_motion_4:
+      device_class: motion
+      value_template: "{{ states('sensor.vision_zp3102_pir_motion_sensor_alarm_level_4')|float > 0 }}"
+
+    linear_wapirz1_motion_1:
+      device_class: motion
+      value_template: "{{ states('sensor.linear_wapirz1_motion_sensor_alarm_level')|float > 0 }}"
+    linear_wapirz1_motion_2:
+      device_class: motion
+      value_template: "{{ states('sensor.linear_wapirz1_motion_sensor_alarm_level_2')|float > 0 }}"
+    linear_wapirz1_motion_3:
+      device_class: motion
+      value_template: "{{ states('sensor.linear_wapirz1_motion_sensor_alarm_level_3')|float > 0 }}"
+    linear_wapirz1_motion_4:
+      device_class: motion
+      value_template: "{{ states('sensor.linear_wapirz1_motion_sensor_alarm_level_4')|float > 0 }}"
+     
+    #arlo_motion_front:
+    #  device_class: motion
+    #  value_template: '{{ as_timestamp(now()) - as_timestamp( strptime(states("sensor.last_front"), "%m-%d-%Y %H:%M:%S") ) | int > 60 }}'
+    #arlo_motio_entryway:
+    #  device_class: motion
+    #  value_template: '{{ as_timestamp(now()) - as_timestamp( strptime(states("sensor.last_entryway"), "%m-%d-%Y %H:%M:%S") ) | int > 60 }}'

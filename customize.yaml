@@ -1,0 +1,108 @@
+
+sensor.mfilivingroomconsole_port1:
+  friendly_name: Internet Modem
+sensor.mfilivingroomconsole_port2:
+  friendly_name: Router
+sensor.mfilivingroomconsole_port4:
+  friendly_name: Console Lamp
+sensor.mfilivingroomconsole_port5:
+  friendly_name: Alexa
+sensor.mfilivingroomconsole_port6:
+  friendly_name: Philips Hue
+sensor.mfilivingroomconsole_port7:
+  friendly_name: Raspberry Pi
+sensor.mfilivingroomconsole_port8:
+  friendly_name: Netgear Arlo
+
+sensor.mfigarage_port8:
+  friendly_name: Fridge Freeze
+
+sensor.captured_today_entryway:
+  friendly_name: Entryway
+sensor.battery_level_entryway:
+  friendly_name: Entryway
+sensor.last_entryway:
+  friendly_name: Entryway
+sensor.signal_strength_entryway:
+  friendly_name: Entryway
+
+sensor.captured_today_front:
+  friendly_name: Front
+sensor.battery_level_front:
+  friendly_name: Front
+sensor.last_front:
+  friendly_name: Front
+sensor.signal_strength_front:
+  friendly_name: Front
+
+zwave.linear_wapirz1_motion_sensor:
+  friendly_name: Dining Room
+binary_sensor.linear_wapirz1_motion_1:
+  friendly_name: Dining Room
+sensor.linear_wapirz1_motion_sensor_temperature:
+  friendly_name: Dining Room
+sensor.linear_wapirz1_motion_sensor_alarm_level:
+  friendly_name: Dining Room
+
+zwave.linear_wapirz1_motion_sensor_2:
+  friendly_name: Kitchen
+binary_sensor.linear_wapirz1_motion_2:
+  friendly_name: Kitchen
+sensor.linear_wapirz1_motion_sensor_temperature_2:
+  friendly_name: Kitchen
+sensor.linear_wapirz1_motion_sensor_alarm_level_2:
+  friendly_name: Kitchen
+
+zwave.linear_wapirz1_motion_sensor_3:
+  friendly_name: Ellie's Room
+binary_sensor.linear_wapirz1_motion_3:
+  friendly_name: Ellie's Room
+sensor.linear_wapirz1_motion_sensor_temperature_3:
+  friendly_name: Ellie's Room
+sensor.linear_wapirz1_motion_sensor_alarm_level_3:
+  friendly_name: Ellie's Room
+
+zwave.linear_wapirz1_motion_sensor_4:
+  friendly_name: Hallway
+binary_sensor.linear_wapirz1_motion_4:
+  friendly_name: Hallway
+sensor.linear_wapirz1_motion_sensor_temperature_4:
+  friendly_name: Hallway
+sensor.linear_wapirz1_motion_sensor_alarm_level_4:
+  friendly_name: Hallway
+
+zwave.vision_zp3102_pir_motion_sensor:
+  friendly_name: Entryway
+binary_sensor.vision_zp3102_pir_motion_1:
+  friendly_name: Entryway
+sensor.vision_zp3102_pir_motion_sensor_temperature:
+  friendly_name: Entryway
+sensor.vision_zp3102_pir_motion_sensor_alarm_level:
+  friendly_name: Entryway
+
+zwave.vision_zp3102_pir_motion_sensor_2:
+  friendly_name: Front
+binary_sensor.vision_zp3102_pir_motion_2:
+  friendly_name: Front
+sensor.vision_zp3102_pir_motion_sensor_temperature_2:
+  friendly_name: Front
+sensor.vision_zp3102_pir_motion_sensor_alarm_level_2:
+  friendly_name: Front
+
+zwave.vision_zp3102_pir_motion_sensor_3:
+  friendly_name: Backyard
+binary_sensor.vision_zp3102_pir_motion_3:
+  friendly_name: Backyard
+sensor.vision_zp3102_pir_motion_sensor_temperature_3:
+  friendly_name: Backyard
+sensor.vision_zp3102_pir_motion_sensor_alarm_level_3:
+  friendly_name: Backyard
+
+zwave.vision_zp3102_pir_motion_sensor_4:
+  friendly_name: Garage
+binary_sensor.vision_zp3102_pir_motion_4:
+  friendly_name: Garage
+sensor.vision_zp3102_pir_motion_sensor_temperature_4:
+  friendly_name: Garage
+sensor.vision_zp3102_pir_motion_sensor_alarm_level_4:
+  friendly_name: Garage

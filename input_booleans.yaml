@@ -1,0 +1,14 @@
+at_home:
+  name: People at home
+  initial: on
+  icon: mdi:home-variant
+
+is_dark:
+  name: Nighttime
+  initial: off
+  icon: mdi:weather-sunset-down
+
+motion_outside:
+  name: Motion Outside
+  initial: off
+  icon: mdi:run

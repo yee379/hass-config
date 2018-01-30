@@ -1,0 +1,20 @@
+
+- alias: Set Thermostat to Eco at night
+  trigger:
+    - platform: time
+      at: '00:00:00'
+  action:
+    - service: climate.set_operation_mode
+      data:
+        entity_id: "climate.home"
+        operation_mode: "eco"
+
+- alias: Set Thermostat to Heat in the morning
+  trigger:
+    - platform: time
+      at: '07:00:00'
+  action:
+    - service: climate.set_operation_mode
+      data:
+        entity_id: "climate.home"
+        operation_mode: "heat"

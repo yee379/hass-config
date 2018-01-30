@@ -1,0 +1,17 @@
+#switch: [] 
+#  - platform: mfidevice
+#    host: mfi-livingroom-console
+#    port: 18080
+#    username: ubnt
+#    password: ubnt
+#    token: 01234567890123456789012345678901
+#    ssl: false
+
+switch:
+  - platform: mfidevice
+    host: mfi-3port
+    port: 18080
+    username: ubnt
+    password: ubnt
+    token: 01234567890123456789012345678901
+    ssl: false

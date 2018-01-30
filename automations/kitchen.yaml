@@ -1,0 +1,93 @@
+- alias: Turn kitchen lights on if movement at night
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.linear_wapirz1_motion_2
+      to: 'on'
+  condition:
+    condition: 'and'
+    conditions:
+      - condition: state
+        entity_id: 'input_boolean.is_dark'
+        state: 'on'
+  action:
+    - service: light.turn_on
+      entity_id: light.kitchen
+      data:
+        transition: 1 
+        brightness_pct: 100
+    - service: timer.cancel
+      entity_id: timer.motion_kitchen_dim
+    - service: timer.cancel
+      entity_id: timer.motion_kitchen_off
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.kitchen
+        value: 100
+        #'{{ states.light.kitchen.attributes.brightness | default(0) | int }}'
+    - service: notify.slack
+      data_template:
+        message: "motion in kitchen"
+
+- alias: No movement in kitchen
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.linear_wapirz1_motion_2
+      to: 'off'
+  #condition:
+  #  condition: 'and'
+  #  conditions:
+  #    - condition: state
+  #      entity_id: binary_sensor.linear_wapirz1_motion_2
+  #      state: 'off'
+  action:
+    - service: notify.slack
+      data_template:
+        message: 'no motion in kitchen, starting timers'
+    - service: timer.start
+      entity_id: timer.motion_kitchen_dim
+    - service: timer.start
+      entity_id: timer.motion_kitchen_off
+
+- alias: Dim kitchen lights off if no movement at night
+  trigger:
+    - platform: event
+      event_type: timer.finished
+      event_data:
+        entity_id: timer.motion_kitchen_dim
+  condition:
+    condition: and
+    conditions:
+      #- condition: state
+      #  entity_id: input_boolean.is_dark
+      #  state: 'on'
+      - condition: state
+        entity_id: light.kitchen
+        state: 'on'
+  action:
+    - service: notify.slack
+      data_template:
+        message: "Dimming kitchen light to {{ ( states.light.kitchen.attributes.brightness / 2 ) | int }}"
+    - service: light.turn_on
+      entity_id: light.kitchen
+      data_template:
+        #transition: 5
+        brightness: '{{ ( states.light.kitchen.attributes.brightness / 2 ) | int }}' 
+  
+- alias: Turn kitchen lights off if no movement at night
+  trigger:
+    - platform: event
+      event_type: timer.finished
+      event_data:
+        entity_id: timer.motion_kitchen_off
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: light.kitchen
+        state: 'on'
+  action:
+    - service: notify.slack
+      data_template:
+        message: "Turning off kitchen light"
+    - service: light.turn_off
+      entity_id: light.kitchen
