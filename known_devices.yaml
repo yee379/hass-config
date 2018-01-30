@@ -164,11 +164,20 @@ rpi2:
   track: true
   vendor: unknown
 
-74ea3a90884d:
+tp-link:
   hide_if_away: false
   icon:
   mac: 74:EA:3A:90:88:4D
-  name: 74ea3a90884d
+  name: TP-Link wifi Dongle
   picture:
   track: true
   vendor: TP-LINK TECHNOLOGIES CO.,LTD.
+
+lutron_caseta:
+  hide_if_away: false
+  icon:
+  mac: A0:F6:FD:00:16:1A
+  name: Lutron Caseta Hub
+  picture:
+  track: true
+  vendor: Texas Instruments
