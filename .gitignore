@@ -1,5 +1,7 @@
 # hass specific
 secrets.yaml
+.wink.conf
+nest.conf
 
 
 
