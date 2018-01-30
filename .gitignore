@@ -3,7 +3,11 @@ secrets.yaml
 .wink.conf
 nest.conf
 phue-*.conf
-
+homebridge/persist/AccessoryInfo.*.json
+homebridge/persist/IdentifierCache.*.json
+lutron/caseta-bridge.crt
+lutron/caseta.crt
+lutron/caseta.key
 
 
 # Byte-compiled / optimized / DLL files
