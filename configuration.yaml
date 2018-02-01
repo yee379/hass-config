@@ -91,13 +91,13 @@ timer:
   motion_outdoor:
     duration: '00:05:00'
   motion_kitchen_dim:
-    duration: '00:01:00'
+    duration: '00:01:30'
   motion_kitchen_off:
     duration: '00:03:00'
   motion_dining_room_dim:
-    duration: '00:02:00'
+    duration: '00:02:30'
   motion_dining_room_off:
-    duration: '00:04:00'
+    duration: '00:05:00'
 
 input_boolean: !include input_booleans.yaml
 input_number: !include input_numbers.yaml
