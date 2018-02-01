@@ -6,7 +6,10 @@
         - device_tracker.echo
         - device_tracker.nestthermostat
         - device_tracker.philipshue
-        - device_tracker.winkhub
+        - device_tracker.lutron_caseta
+        - device_tracker.mfigarage
+        - device_tracker.mfilivingroomconsole
+        - device_tracker.mfi3port
       to: 'not_home'
   action:
     - service: notify.slack
