@@ -14,21 +14,6 @@ device_tracker:
 
 
 
-group:
-  
-  yee_location:
-    name: "Yee's location"
-    # view: no
-    entities:
-      - device_tracker.yeespixel
-      - device_tracker.yeespixel_bt
-
-  p_location:
-    name: "P's location"
-    # view: no
-    entities:
-      - device_tracker.psiphone
-      - device_tracker.psiphone_ha
 
 # vim: set filetype=yaml et sw=2 ts=2 :
 

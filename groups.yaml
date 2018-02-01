@@ -1,0 +1,103 @@
+
+people:
+  name: People
+  view: yes
+  entities:
+    - group.yee_location
+    - group.p_location
+
+inside:
+  name: Inside
+  view: yes
+  entities:
+    - sensor.home_thermostat_humidity
+    - sensor.home_thermostat_temperature
+    - sensor.linear_wapirz1_motion_sensor_temperature
+    - climate.home
+
+
+outside:
+  name: Outside
+  view: yes
+  entities:
+    - scene.outdoor_security_lights_on
+    - scene.outdoor_security_lights_off
+    - input_boolean.motion_outside
+    - camera.entryway
+    - camera.front
+    - sensor.battery_level_entryway
+    - sensor.battery_level_front
+    - sensor.moon
+    - sun.sun
+    - sensor.vision_zp3102_pir_motion_sensor_temperature
+    - sensor.vision_zp3102_pir_motion_sensor_temperature_2
+    - sensor.vision_zp3102_pir_motion_sensor_temperature_3
+    - binary_sensor.vision_zp3102_pir_motion_1
+    - binary_sensor.vision_zp3102_pir_motion_2
+    - binary_sensor.vision_zp3102_pir_motion_3
+    - light.outdoor
+
+
+
+great_room:
+  name: Great Room
+  view: yes
+  entities:
+    - light.dining_room
+    - light.floor_lamp
+    - binary_sensor.linear_wapirz1_motion_1
+    - light.console_lamp
+    - sensor.home_thermostat_temperature
+    - sensor.linear_wapirz1_motion_sensor_temperature
+    - light.reading_lamp
+    - climate.home
+    - sensor.home_thermostat_humidity
+    - timer.motion_dining_room_dim
+    - timer.motion_dining_room_off
+
+kitchen:
+  name: Kitchen
+  view: yes
+  entities:
+    - light.kitchen
+    - binary_sensor.linear_wapirz1_motion_2
+    - sensor.linear_wapirz1_motion_sensor_temperature_2
+    - timer.motion_kitchen_dim
+    - timer.motion_kitchen_off
+
+master_bedroom:
+  name: Master Bedroom
+  view: yes
+  entities:
+    - light.master_bedroom
+
+ellies_bedroom:
+  name: Ellie's Bedroom
+  view: yes
+  entities:
+    - light.ellies_bedroom
+    - binary_sensor.linear_wapirz1_motion_3
+    - sensor.linear_wapirz1_motion_sensor_temperature_3
+
+garage:
+  name: Garage
+  view: yes
+  entities:
+    - sensor.vision_zp3102_pir_motion_sensor_temperature_4
+    - binary_sensor.vision_zp3102_pir_motion_4
+    - sensor.mfigarage_port8
+
+
+yee_location:
+  name: "Yee's location"
+  # view: no
+  entities:
+    - device_tracker.yeespixel
+    - device_tracker.yeespixel_bt
+
+p_location:
+  name: "P's location"
+  # view: no
+  entities:
+    - device_tracker.psiphone
+    - device_tracker.psiphone_ha
