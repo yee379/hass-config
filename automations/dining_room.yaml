@@ -60,8 +60,34 @@
     - service: light.turn_on
       entity_id: light.dining_room
       data_template:
-        transition: 5
+        transition: 8
         brightness: '{{ ( states.light.dining_room.attributes.brightness / 2 ) | int }}'
+
+- alias: Turn dining room lights back up if movment
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.linear_wapirz1_motion_1
+      to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: template
+        value_template: "{{ is_state('timer.motion_dining_room_off', 'active' ) }}"
+      - condition: state
+        entity_id: light.dining_room
+        state: 'on'
+  action:
+    - service: timer.cancel
+      entity_id: timer.motion_dining_room_off
+    - service: light.turn_on
+      entity_id: light.dining_room
+      data_template:
+        transition: 1
+        brightness: "{{ states('input_number.dining_room') | int * 2 }}"
+    - service: notify.slack
+      data_template:
+        message: 'turning dining room lights back to previous level'
+
 
 - alias: Turn dining room lights off if no movement
   trigger:
@@ -78,11 +104,13 @@
       - condition: state
         entity_id: light.dining_room
         state: 'on'
+      - condition: template
+        value_template: "{{ ( states.light.dining_room.attributes.brightness | int ) <= ( states('input_number.dining_room') | int ) }}"
   action:
-    - service: notify.slack
-      data_template:
-        message: "Turning off dining room light (current state {{ states.light.dining_room }})"
+    #- service: notify.slack
+    #  data_template:
+    #    message: "Turning off dining room light (current state {{ states.light.dining_room }})"
     - service: light.turn_off
       entity_id: light.dining_room
       data_template:
-        transition: 5
+        transition: 8
