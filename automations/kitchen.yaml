@@ -12,9 +12,9 @@
       data_template:
         entity_id: input_number.kitchen
         value: '{{ states.light.kitchen.attributes.brightness | default(0) | int }}'
-    - service: notify.slack
-      data_template:
-        message: "motion in kitchen"
+    #- service: notify.slack
+    #  data_template:
+    #    message: "motion in kitchen"
 
 - alias: No movement in kitchen detected
   trigger:
@@ -22,9 +22,9 @@
       entity_id: binary_sensor.linear_wapirz1_motion_2
       to: 'off'
   action:
-    - service: notify.slack
-      data_template:
-        message: 'no motion in kitchen, starting timers'
+    #- service: notify.slack
+    #  data_template:
+    #    message: 'no motion in kitchen, starting timers'
     - service: timer.start
       entity_id: timer.motion_kitchen_dim
     - service: timer.start
@@ -64,15 +64,15 @@
         entity_id: light.kitchen
         state: 'on'
   action:
-    - service: notify.slack
-      data_template:
-        message: "Dimming kitchen light to {{ ( states.light.kitchen.attributes.brightness / 2 ) | int }}"
+    #- service: notify.slack
+    #  data_template:
+    #    message: "Dimming kitchen light to {{ ( states.light.kitchen.attributes.brightness / 2 ) | int }}"
     - service: light.turn_on
       entity_id: light.kitchen
       data_template:
-        transition: 5
+        transition: 8
         brightness: '{{ ( states.light.kitchen.attributes.brightness / 2 ) | int }}' 
-  
+
 - alias: Turn kitchen lights off if no movement
   trigger:
     - platform: event
@@ -88,10 +88,12 @@
       - condition: state
         entity_id: light.kitchen
         state: 'on'
+      - condition: template
+        value_template: "{{ ( states.light.kitchen.attributes.brightness | int ) <= ( states('input_number.kitchen') | int ) }}"
   action:
-    - service: notify.slack
-      data_template:
-        message: "Turning off kitchen light"
+    #- service: notify.slack
+    #  data_template:
+    #    message: "Turning off kitchen light"
     - service: light.turn_off
       entity_id: light.kitchen
       data_template:
