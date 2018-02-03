@@ -55,6 +55,7 @@ discovery:
 
 # enable integration with Alexa
 emulated_hue:
+  expose_by_default: false
 
 # ios
 ios:
@@ -93,9 +94,9 @@ timer:
   motion_kitchen_dim:
     duration: '00:01:30'
   motion_kitchen_off:
-    duration: '00:03:00'
+    duration: '00:05:00'
   motion_dining_room_dim:
-    duration: '00:02:30'
+    duration: '00:03:00'
   motion_dining_room_off:
     duration: '00:05:00'
 
