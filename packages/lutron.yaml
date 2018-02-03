@@ -1,0 +1,10 @@
+lutron_caseta_pro:
+  bridges:
+    - host: lutron-caseta.lan
+
+
+#lutron_caseta:
+#  host: lutron-caseta.lan
+#  keyfile: lutron/caseta.key
+#  certfile: lutron/caseta.crt
+#  ca_certs: lutron/caseta-bridge.crt
