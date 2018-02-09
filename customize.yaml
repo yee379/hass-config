@@ -15,7 +15,7 @@ sensor.mfilivingroomconsole_port8:
   friendly_name: Netgear Arlo
 
 sensor.mfigarage_port8:
-  friendly_name: Fridge Freezer
+  friendly_name: Freezer
 
 sensor.captured_today_entryway:
   friendly_name: Entryway
@@ -106,3 +106,32 @@ sensor.vision_zp3102_pir_motion_sensor_temperature_4:
   friendly_name: Garage
 sensor.vision_zp3102_pir_motion_sensor_alarm_level_4:
   friendly_name: Garage
+
+light.floor_lamp:
+  emulated_hue_hidden: true
+light.reading_lamp:
+  emulated_hue_hidden: true
+light.console_lamp:
+  emulated_hue_hidden: true
+
+light.dining_room:
+  emulated_hue_hidden: false
+light.kitchen:
+  emulated_hue_hidden: false
+light.ellies_bedroom:
+  emulated_hue_hidden: false
+light.hallway:
+  emulated_hue_hidden: false
+light.outdoor:
+  emulated_hue_hidden: false
+light.master_bedroom:
+  emulated_hue_hidden: false
+
+group.all_lights:
+  emulated_hue_hidden: true
+group.all_devices:
+  emulated_hue_hidden: true
+group.all_switches:
+  emulated_hue_hidden: true
+
+
