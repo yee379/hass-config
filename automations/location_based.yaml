@@ -15,27 +15,23 @@
   trigger:
     - platform: state
       entity_id:
-        - device_tracker.yeespixel
-        - device_tracker.psiphone
-      from: 'home'
-      to: 'not_home'
-#    - platform: template
-#      value_template: "{{ is_state_attr('climate.home', 'away_mode', 'on' }}"
+        - yee_location_dropdown.state
+        - pi_location_dropdown.state
+      from: 'Home'
+      to: 'Just Left'
   condition:
     condition: and
     conditions:
-      - condition: state
-        entity_id: 'device_tracker.yeespixel'
-        state: 'not_home'
-      - condition: state
-        entity_id: 'device_tracker.psiphone'
-        state: 'not_home'
+      - condition: template
+        value_template: "{{ not is_state('yee_location_dropdown.state','home') or not is_state('yee_location_dropdown.state','Just Arrived') }}"
+      - condition: template
+        value_template: "{{ not is_state('pi_location_dropdown.state','home') or not is_state('pi_location_dropdown.state','Just Arrived') }}"
   action:
     - service: input_boolean.turn_off
       entity_id:  input_boolean.at_home
     - service: notify.slack
       data_template:
-        message: "Bye bye"
+        message: "Bye bye everybody"
     
 - alias: Set Thermostat to Away mode when no-one is home
   trigger:
@@ -70,23 +66,13 @@
         message: "Turned off all lights"
 
 
-- alias: Set Coming Home
+- alias: Set Arriving Home
   trigger:
     - platform: state
       entity_id:
-        - device_tracker.yeespixel
-        - device_tracker.psiphone
-      from: 'not_home'
-      to: 'home'
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: 'device_tracker.yeespixel'
-        state: 'home'
-      - condition: state
-        entity_id: 'device_tracker.psiphone'
-        state: 'home'
+        - yee_location_dropdown.state
+        - pi_location_dropdown.state
+      to: 'Just Arrived'
   action:
     - service: input_boolean.turn_on
       entity_id:
@@ -94,6 +80,7 @@
     - service: notify.slack
       data_template:
         message: "Welcome back {{ trigger.entity_id }}"
+
 
 - alias: Set Thermostat to On when home
   trigger:
