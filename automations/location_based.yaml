@@ -11,21 +11,43 @@
       data_template:
         message: "A new device has been detected: {{ trigger.event }}"
 
+- alias: Yees away
+  trigger:
+    - platform: state
+      entity_id:
+        - input_select.yee_location_dropdown
+      to: 'Away'
+  action:
+    - service: notify.slack
+      data_template:
+        message: "Bye bye {{ trigger }}"
+
+- alias: Ps away
+  trigger:
+    - platform: state
+      entity_id:
+        - input_select.pi_location_dropdown
+      to: 'Away'
+  action:
+    - service: notify.slack
+      data_template:
+        message: "Bye bye {{ trigger }}"
+
+
 - alias: Set No-one at Home
   trigger:
     - platform: state
       entity_id:
-        - yee_location_dropdown.state
-        - pi_location_dropdown.state
-      from: 'Home'
-      to: 'Just Left'
+        - input_select.yee_location_dropdown
+        - input_select.pi_location_dropdown
+      to: 'Away'
   condition:
     condition: and
     conditions:
       - condition: template
-        value_template: "{{ not is_state('yee_location_dropdown.state','home') or not is_state('yee_location_dropdown.state','Just Arrived') }}"
+        value_template: "{{ is_state('input_select.yee_location_dropdown','Away') }}"
       - condition: template
-        value_template: "{{ not is_state('pi_location_dropdown.state','home') or not is_state('pi_location_dropdown.state','Just Arrived') }}"
+        value_template: "{{ is_state('input_select.pi_location_dropdown','Away') }}"
   action:
     - service: input_boolean.turn_off
       entity_id:  input_boolean.at_home
@@ -70,8 +92,8 @@
   trigger:
     - platform: state
       entity_id:
-        - yee_location_dropdown.state
-        - pi_location_dropdown.state
+        - input_select.yee_location_dropdown
+        - input_select.pi_location_dropdown
       to: 'Just Arrived'
   action:
     - service: input_boolean.turn_on

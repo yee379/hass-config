@@ -23,12 +23,14 @@
     linear_wapirz1_motion_2:
       device_class: motion
       value_template: "{{ states('sensor.linear_wapirz1_motion_sensor_alarm_level_2')|float > 0 }}"
-    linear_wapirz1_motion_3:
+    ellies_bedroom_motion:
+      friendly_name: Ellie's Room
       device_class: motion
-      value_template: "{{ states('sensor.linear_wapirz1_motion_sensor_alarm_level_3')|float > 0 }}"
-    linear_wapirz1_motion_4:
+      value_template: "{{ states('sensor.ellies_bedroom_alarm_level')|float > 0 }}"
+    hallway_motion:
+      friendly_name: Hallway
       device_class: motion
-      value_template: "{{ states('sensor.linear_wapirz1_motion_sensor_alarm_level_4')|float > 0 }}"
+      value_template: "{{ states('sensor.hallway_alarm_level')|float > 0 }}"
      
     #arlo_motion_front:
     #  device_class: motion

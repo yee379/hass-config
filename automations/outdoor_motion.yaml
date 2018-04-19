@@ -18,7 +18,7 @@
   action:
     - service: notify.slack
       data_template:
-        message: "Detected motion outside {{ trigger.from_state.attributes.friendly_name }} ({{ trigger.from_state }})"
+        message: "Detected motion outside {{ trigger.from_state.attributes.friendly_name }}"
     - service: input_boolean.turn_on
       entity_id: input_boolean.motion_outside
     - service: timer.cancel

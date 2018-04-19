@@ -1,0 +1,19 @@
+yee_location_dropdown:
+  name: Yee
+  options:
+    - Home
+    - Just Arrived
+    - Just Left
+    - Away
+    - Extended Away
+  initial: Home
+
+pi_location_dropdown:
+  name: Pi
+  options:
+    - Home
+    - Just Arrived
+    - Just Left
+    - Away
+    - Extended Away
+  initial: Home

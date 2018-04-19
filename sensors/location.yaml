@@ -1,0 +1,9 @@
+- platform: template
+  sensors:
+    yee_location:
+      value_template: '{{ states.input_select.yee_location_dropdown.state }}'
+      friendly_name: 'Yee'
+    pi_location:
+      value_template: '{{ states.input_select.pi_location_dropdown.state }}'
+      friendly_name: 'Pi'
+

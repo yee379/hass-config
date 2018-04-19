@@ -1,0 +1,5 @@
+- platform: rest
+  resource: https://agent.electricimp.com/XJOrIbjXDZ9F/state
+  name: Freezer
+  value_template: '{{ value_json.temp }}'
+  unit_of_measurement: "°C"

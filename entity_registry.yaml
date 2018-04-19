@@ -1,0 +1,388 @@
+climate.home:
+  name:
+  platform: nest
+  unique_id: ybUcabad16GA8iPd0lLy6y9b-p4Q8xU7
+sensor.ipad_battery_state:
+  name:
+  platform: ios
+  unique_id: state_ipad
+sensor.yees_ipad_battery_state:
+  name:
+  platform: ios
+  unique_id: state_yeesipad_ha
+sensor.ipad_battery_level:
+  name:
+  platform: ios
+  unique_id: level_ipad
+sensor.ps_iphone_battery_level:
+  name:
+  platform: ios
+  unique_id: level_ps_iphone
+sensor.yees_ipad_battery_level:
+  name:
+  platform: ios
+  unique_id: level_yeesipad_ha
+sensor.ps_iphone_battery_state:
+  name:
+  platform: ios
+  unique_id: state_ps_iphone
+binary_sensor.vision_zp3102_pir_motion_sensor_sensor:
+  name:
+  platform: zwave
+  unique_id: 2-72057594076463104
+sensor.vision_zp3102_pir_motion_sensor_temperature:
+  name:
+  platform: zwave
+  unique_id: 2-72057594076479506
+sensor.vision_zp3102_pir_motion_sensor_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528065
+sensor.vision_zp3102_pir_motion_sensor_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528081
+sensor.vision_zp3102_pir_motion_sensor_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528097
+sensor.vision_zp3102_pir_motion_sensor_burglar:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528225
+sensor.vision_zp3102_pir_motion_sensor_power_management:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528241
+sensor.vision_zp3102_pir_motion_sensor_system:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528257
+sensor.vision_zp3102_pir_motion_sensor_emergency:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528273
+sensor.vision_zp3102_pir_motion_sensor_clock:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528289
+binary_sensor.vision_zp3102_pir_motion_sensor_sensor_2:
+  name:
+  platform: zwave
+  unique_id: 3-72057594093240320
+sensor.vision_zp3102_pir_motion_sensor_temperature_2:
+  name:
+  platform: zwave
+  unique_id: 3-72057594093256722
+sensor.vision_zp3102_pir_motion_sensor_alarm_type_2:
+  name:
+  platform: zwave
+  unique_id: 3-72057594094305281
+sensor.vision_zp3102_pir_motion_sensor_alarm_level_2:
+  name:
+  platform: zwave
+  unique_id: 3-72057594094305297
+sensor.vision_zp3102_pir_motion_sensor_sourcenodeid_2:
+  name:
+  platform: zwave
+  unique_id: 3-72057594094305313
+sensor.vision_zp3102_pir_motion_sensor_burglar_2:
+  name:
+  platform: zwave
+  unique_id: 3-72057594094305441
+sensor.vision_zp3102_pir_motion_sensor_system_2:
+  name:
+  platform: zwave
+  unique_id: 3-72057594094305473
+sensor.vision_zp3102_pir_motion_sensor_emergency_2:
+  name:
+  platform: zwave
+  unique_id: 3-72057594094305489
+sensor.vision_zp3102_pir_motion_sensor_clock_2:
+  name:
+  platform: zwave
+  unique_id: 3-72057594094305505
+binary_sensor.vision_zp3102_pir_motion_sensor_sensor_3:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110017536
+sensor.vision_zp3102_pir_motion_sensor_temperature_3:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110033938
+sensor.vision_zp3102_pir_motion_sensor_alarm_type_3:
+  name:
+  platform: zwave
+  unique_id: 4-72057594111082497
+sensor.vision_zp3102_pir_motion_sensor_alarm_level_3:
+  name:
+  platform: zwave
+  unique_id: 4-72057594111082513
+sensor.vision_zp3102_pir_motion_sensor_sourcenodeid_3:
+  name:
+  platform: zwave
+  unique_id: 4-72057594111082529
+sensor.vision_zp3102_pir_motion_sensor_burglar_3:
+  name:
+  platform: zwave
+  unique_id: 4-72057594111082657
+sensor.vision_zp3102_pir_motion_sensor_power_management_2:
+  name:
+  platform: zwave
+  unique_id: 4-72057594111082673
+sensor.vision_zp3102_pir_motion_sensor_clock_3:
+  name:
+  platform: zwave
+  unique_id: 4-72057594111082721
+binary_sensor.vision_zp3102_pir_motion_sensor_sensor_4:
+  name:
+  platform: zwave
+  unique_id: 5-72057594126794752
+sensor.vision_zp3102_pir_motion_sensor_temperature_4:
+  name:
+  platform: zwave
+  unique_id: 5-72057594126811154
+sensor.vision_zp3102_pir_motion_sensor_alarm_type_4:
+  name:
+  platform: zwave
+  unique_id: 5-72057594127859713
+sensor.vision_zp3102_pir_motion_sensor_alarm_level_4:
+  name:
+  platform: zwave
+  unique_id: 5-72057594127859729
+sensor.vision_zp3102_pir_motion_sensor_sourcenodeid_4:
+  name:
+  platform: zwave
+  unique_id: 5-72057594127859745
+sensor.vision_zp3102_pir_motion_sensor_burglar_4:
+  name:
+  platform: zwave
+  unique_id: 5-72057594127859873
+sensor.vision_zp3102_pir_motion_sensor_clock_4:
+  name:
+  platform: zwave
+  unique_id: 5-72057594127859937
+binary_sensor.linear_wapirz1_motion_sensor_sensor:
+  name:
+  platform: zwave
+  unique_id: 6-72057594143571968
+sensor.linear_wapirz1_motion_sensor_temperature:
+  name:
+  platform: zwave
+  unique_id: 6-72057594143588370
+sensor.linear_wapirz1_motion_sensor_direction:
+  name:
+  platform: zwave
+  unique_id: 6-72057594143588466
+sensor.linear_wapirz1_motion_sensor_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 6-72057594144636929
+sensor.linear_wapirz1_motion_sensor_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 6-72057594144636945
+sensor.linear_wapirz1_motion_sensor_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 6-72057594144636961
+sensor.linear_wapirz1_motion_sensor_burglar:
+  name:
+  platform: zwave
+  unique_id: 6-72057594144637089
+binary_sensor.linear_wapirz1_motion_sensor_sensor_2:
+  name:
+  platform: zwave
+  unique_id: 7-72057594160349184
+sensor.linear_wapirz1_motion_sensor_temperature_2:
+  name:
+  platform: zwave
+  unique_id: 7-72057594160365586
+sensor.linear_wapirz1_motion_sensor_alarm_type_2:
+  name:
+  platform: zwave
+  unique_id: 7-72057594161414145
+sensor.linear_wapirz1_motion_sensor_alarm_level_2:
+  name:
+  platform: zwave
+  unique_id: 7-72057594161414161
+sensor.linear_wapirz1_motion_sensor_sourcenodeid_2:
+  name:
+  platform: zwave
+  unique_id: 7-72057594161414177
+sensor.linear_wapirz1_motion_sensor_burglar_2:
+  name:
+  platform: zwave
+  unique_id: 7-72057594161414305
+binary_sensor.ellies_room_motion_sensor:
+  name:
+  platform: zwave
+  unique_id: 8-72057594177126400
+sensor.ellies_room_temperature:
+  name:
+  platform: zwave
+  unique_id: 8-72057594177142802
+sensor.ellies_room_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 8-72057594178191361
+sensor.ellies_room_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 8-72057594178191377
+sensor.ellies_room_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 8-72057594178191393
+sensor.ellies_room_burglar:
+  name:
+  platform: zwave
+  unique_id: 8-72057594178191521
+binary_sensor.hallway_motion_sensor:
+  name:
+  platform: zwave
+  unique_id: 9-72057594193903616
+sensor.hallway_temperature:
+  name:
+  platform: zwave
+  unique_id: 9-72057594193920018
+sensor.hallway_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 9-72057594194968577
+sensor.hallwayr_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 9-72057594194968593
+sensor.hallway_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 9-72057594194968609
+sensor.hallway_burglar:
+  name:
+  platform: zwave
+  unique_id: 9-72057594194968737
+binary_sensor.front_door_mini:
+  name:
+  platform: deconz
+  unique_id: 00:15:8d:00:02:00:d5:74-01-0006
+light.console_lamp:
+  name: Console Lamp
+  platform: deconz
+  unique_id: 00:17:88:01:00:f5:19:1e-0b
+light.floor_lamp:
+  name: Floor Lamp
+  platform: deconz
+  unique_id: 00:17:88:01:00:f5:3a:93-0b
+light.reading_lamp:
+  name: Reading Lamp
+  platform: deconz
+  unique_id: 00:17:88:01:00:e2:fe:be-0b
+binary_sensor.front_door_sensor:
+  name:
+  platform: zwave
+  unique_id: 10-72057594210680832
+sensor.front_door_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 10-72057594211745793
+sensor.front_door_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 10-72057594211745809
+sensor.front_door_sensative_strips_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 10-72057594211745825
+sensor.front_door:
+  name:
+  platform: zwave
+  unique_id: 10-72057594211745937
+sensor.front_door_burglar:
+  name:
+  platform: zwave
+  unique_id: 10-72057594211745953
+binary_sensor.back_door_sensor:
+  name:
+  platform: zwave
+  unique_id: 11-72057594227458048
+sensor.back_door_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 11-72057594228523009
+sensor.back_door_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 11-72057594228523025
+sensor.back_door_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 11-72057594228523041
+sensor.back_door:
+  name:
+  platform: zwave
+  unique_id: 11-72057594228523153
+sensor.back_door_burglar:
+  name:
+  platform: zwave
+  unique_id: 11-72057594228523169
+binary_sensor.sensor_3:
+  name:
+  platform: zwave
+  unique_id: 12-72057594244235264
+sensor.alarm_type_3:
+  name:
+  platform: zwave
+  unique_id: 12-72057594245300225
+sensor.alarm_level_3:
+  name:
+  platform: zwave
+  unique_id: 12-72057594245300241
+sensor.sensative_strips_sourcenodeid_3:
+  name:
+  platform: zwave
+  unique_id: 12-72057594245300257
+sensor.sensative_strips_access_control_3:
+  name:
+  platform: zwave
+  unique_id: 12-72057594245300369
+sensor.sensative_strips_burglar_3:
+  name:
+  platform: zwave
+  unique_id: 12-72057594245300385
+switch.garage_switch:
+  name: Garage
+  platform: zwave
+  unique_id: 13-72057594260832256
+sensor.garage_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 13-72057594262077441
+sensor.garage_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 13-72057594262077457
+switch.washing_machine:
+  name: Washing Machine
+  platform: wemo
+  unique_id: 231625K120065B
+switch.dish_washer:
+  name: Dish Washer
+  platform: wemo
+  unique_id: 221620K1200714
+sensor.fridge_freezer:
+  name: Fridge Freezer
+  platform: deconz
+  unique_id: 00:15:8d:00:02:22:66:6c-01-0405
+sensor.fridge:
+  name: Fridge
+  platform: deconz
+  unique_id: 00:15:8d:00:02:22:67:fd-01-0402
+sensor.fridge_humidity:
+  name: Fridge
+  platform: deconz
+  unique_id: 00:15:8d:00:02:22:67:fd-01-0405
+sensor.fridge_freezer_humidity:
+  name: Fridge Freezer
+  platform: deconz
+  unique_id: 00:15:8d:00:02:22:66:6c-01-0402
